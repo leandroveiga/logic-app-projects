@@ -10,7 +10,7 @@
                     "body": "@{triggerBody()?['field']} | @{triggerBody()?['field_1']}"
                 },
                 "runAfter": {
-                    "Initialize_variable": [
+                    "Set_variable": [
                         "Succeeded"
                     ]
                 }
@@ -27,6 +27,18 @@
                     ]
                 },
                 "runAfter": {}
+            },
+            "Set_variable": {
+                "type": "SetVariable",
+                "inputs": {
+                    "name": "varItem",
+                    "value": 7
+                },
+                "runAfter": {
+                    "Initialize_variable": [
+                        "Succeeded"
+                    ]
+                }
             }
         },
         "triggers": {
