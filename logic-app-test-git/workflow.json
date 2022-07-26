@@ -9,6 +9,23 @@
                     "statusCode": 200,
                     "body": "@{triggerBody()?['field']} | @{triggerBody()?['field_1']}"
                 },
+                "runAfter": {
+                    "Initialize_variable": [
+                        "Succeeded"
+                    ]
+                }
+            },
+            "Initialize_variable": {
+                "type": "InitializeVariable",
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "varItem",
+                            "type": "integer",
+                            "value": 1
+                        }
+                    ]
+                },
                 "runAfter": {}
             }
         },
